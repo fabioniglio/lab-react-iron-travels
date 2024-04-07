@@ -9,7 +9,7 @@ function TravelList() {
     console.log(travelId);
     setTravelPlans(
       travelPlans.filter(
-        (currentDestination) => currentDestination.Id !== travelId
+        (currentDestination) => currentDestination.id !== travelId
       )
     );
     console.log(travelPlans);
@@ -26,11 +26,12 @@ function TravelList() {
               alt=""
             />
             <div>
-              <h3>{currentDestination.destination}</h3>
+              <h2>{currentDestination.destination}</h2>
               <p>{currentDestination.description}</p>
+              <p>Duration: {currentDestination.days} days</p>
               <p>
                 <strong>Price: </strong>
-                {currentDestination.totalCost} Euro
+                {currentDestination.totalCost} €
               </p>
               <div className={classes.conditions}>
                 {currentDestination.totalCost >= 1500 && (
